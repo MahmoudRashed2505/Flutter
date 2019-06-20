@@ -26,7 +26,6 @@ class NoteDetailState extends State<NoteDetail> {
   TextEditingController descriptopnController = TextEditingController();
 
   NoteDetailState(this.note, this.appBarTitle);
-    var _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +50,7 @@ class NoteDetailState extends State<NoteDetail> {
               },
             ),
           ),
-          body: Form(
-            key: _formKey,
-            child:Padding(
+          body: Padding(
             padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
             child: ListView(
               children: <Widget>[
@@ -76,45 +73,41 @@ class NoteDetailState extends State<NoteDetail> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-                  child: TextFormField(
-                    controller: titleController,
-                    style: textstyle,
-                    validator: (String value){
-                      if(value.isEmpty){
-                        return 'Please Enter the Title';
-                      }
-                      updateTitle();
-                    },
-                    //onChanged: (value) {
-                      //debugPrint('Something Changed in Title Text Field');
-                      //updateTitle();
-                    //},
-                    decoration: InputDecoration(
-                        labelText: 'Title',
-                        labelStyle: textstyle,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0))),
-                  ),
-                ),
+					    padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+					    child: TextField(
+						    controller: titleController,
+						    style: textstyle,
+						    onChanged: (value) {
+						    	debugPrint('Something changed in Title Text Field');
+						    	updateTitle();
+						    },
+						    decoration: InputDecoration(
+							    labelText: 'Title',
+							    labelStyle: textstyle,
+							    border: OutlineInputBorder(
+								    borderRadius: BorderRadius.circular(5.0)
+							    )
+						    ),
+					    ),
+				    ),
                 Padding(
-                  padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-                  child: TextFormField(
-                    controller: descriptopnController,
-                    style: textstyle,
-                    validator: (String value){
-                      if(value.isEmpty){
-                        return 'Please Enter the Description';
-                      }
-                      updateTitle();
-                    },
-                    decoration: InputDecoration(
-                        labelText: 'Description',
-                        labelStyle: textstyle,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0))),
-                  ),
-                ),
+					    padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+					    child: TextField(
+						    controller: descriptopnController,
+						    style: textstyle,
+						    onChanged: (value) {
+							    debugPrint('Something changed in Description Text Field');
+							    updateDescription();
+						    },
+						    decoration: InputDecoration(
+								    labelText: 'Description',
+								    labelStyle: textstyle,
+								    border: OutlineInputBorder(
+										    borderRadius: BorderRadius.circular(5.0)
+								    )
+						    ),
+					    ),
+				    ),
                 Padding(
                   padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: Row(
@@ -160,7 +153,7 @@ class NoteDetailState extends State<NoteDetail> {
               ],
             ),
           ),
-        )));
+        ));
   }
 
   void moveToLastScreen() {
