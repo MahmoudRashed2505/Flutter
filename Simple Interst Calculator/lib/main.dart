@@ -1,4 +1,4 @@
-import 'package:flutter';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -20,7 +20,6 @@ class SIForm extends StatefulWidget {
 }
 
 class _SIFormState extends State<SIForm> {
-
   var _formKey = GlobalKey<FormState>();
 
   var _currencies = ['Rupees', 'Dollars', 'Pounds'];
@@ -74,9 +73,7 @@ class _SIFormState extends State<SIForm> {
                           hintText: 'Enter Principal e.g. 12000',
                           labelStyle: textStyle,
                           errorStyle: TextStyle(
-                            color: Colors.yellowAccent,
-                            fontSize: 15.0
-                          ),
+                              color: Colors.yellowAccent, fontSize: 15.0),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.0))),
                     )),
@@ -97,9 +94,7 @@ class _SIFormState extends State<SIForm> {
                           hintText: 'In percent',
                           labelStyle: textStyle,
                           errorStyle: TextStyle(
-                            color: Colors.yellowAccent,
-                            fontSize: 15.0
-                          ),
+                              color: Colors.yellowAccent, fontSize: 15.0),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.0))),
                     )),
@@ -123,9 +118,7 @@ class _SIFormState extends State<SIForm> {
                               hintText: 'Time in years',
                               labelStyle: textStyle,
                               errorStyle: TextStyle(
-                                color: Colors.yellowAccent,
-                                fontSize: 15.0
-                              ),
+                                  color: Colors.yellowAccent, fontSize: 15.0),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0))),
                         )),
