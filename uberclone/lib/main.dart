@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import './screens/home.dart';
 
-void main () => runApp(MyApp());
+void main() => runApp(MyApp());
 
-class MyApp extends class name extends StatelessWidget {
-  
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Uber Clone',
-      
-    );
+      theme: ThemeData(primarySwatch: Colors.blue
+      ),
+      home: MyHomePage(title: 'Uber Clone'),
     );
   }
-}{
 }
-
- 
